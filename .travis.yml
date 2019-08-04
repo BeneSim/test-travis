@@ -1,0 +1,5 @@
+language: cpp
+script:
+    - cmake -E make_directory build
+    - cmake . -B build
+    - cmake --build build
