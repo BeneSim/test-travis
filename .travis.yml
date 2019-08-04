@@ -1,5 +1,7 @@
 language: cpp
 script:
+    - echo $(pwd)
     - cmake -E make_directory build
+    - echo $(pwd)
     - cmake -S . -B build
     - cmake --build build
