@@ -3,7 +3,7 @@ language: cpp
 matrix:
     include:
         - os: linux
-        - os: xcode10.1
+        - os: osx
 script:
     - mkdir build
     - cd build
