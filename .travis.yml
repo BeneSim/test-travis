@@ -1,12 +1,18 @@
 language: cpp
 
-matrix:
-    include:
-        - os: linux
-        - os: osx
-        - os: windows
+os: linux
+
 script:
     - mkdir build
     - cd build
     - cmake ..
     - cmake --build .
+
+os: windows
+
+script:
+    - mkdir build-windows
+    - cd build-windows
+    - cmake ..
+    - cmake --build .
+
