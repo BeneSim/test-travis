@@ -1,4 +1,9 @@
 language: cpp
+
+matrix:
+    include:
+        - os: linux
+        - os: xcode10.1
 script:
     - mkdir build
     - cd build
