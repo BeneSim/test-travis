@@ -4,6 +4,7 @@ matrix:
     include:
         - os: linux
         - os: osx
+        - os: windows
 script:
     - mkdir build
     - cd build
