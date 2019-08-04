@@ -1,10 +1,10 @@
 language: cpp
 
 matrix:
-    os:
-        - linux
-        - osx
-        - windows
+    os: linux
+    os: osx
+    os: windows
+
 script:
 - mkdir build
 - cd build
