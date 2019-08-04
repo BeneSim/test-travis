@@ -16,7 +16,7 @@ deploy:
   provider: releases
   api_key:
     secure: SCM5M1U1/WkxFGj+ZXI1vJH+eBKjNO88Moa7tS6jC0sg701fljUgQ6dM4ixD+xs8Vkeo7mfs7J5ayFsC5RUVQDFBBO8FWFsXzRUQaWIqkp0N23hiQB2fX5DESme1FRraBc3JjyJlKAYZdJvOo/wPkuveJA52Lk70T3BCOW3Drfs4p2wrUBYuOi1GtI+qeyxmSK7bZc68QP034fDiMMHZV7lmPZW26Cn9NC1jH98U2yBe201F+Uxo0cJMtaNLYTJHjH/qd1UQy4sW3NE+tUfWuos9n1HvMC3rYbkdZ0NnxitfDjgh/ZnAatGSRMVMJCzwIwfkYgW2T0y3qKpCSW8ibPULbED7K1ISG2aYQRuua3ORFzBWT5fFFrbvQNPPv7AdXEIxhefu62b2feib+v9sbYa7+BMM6f9msL92HmknKpBEZ1DicbLTDuj+kb/wuX4oZ68LJGfU68Ip+4AVqL2Jurx/lXwYRi7uv7hjmtrcqzeHrOuOt8EIZnogtBV78QMdLVt4JTB9heP9Kaz0ueh/J+vXmib6KdWr9NtNsuFy8dcYXcMhh7BqmAorUcO+pT0Dkq8TwPuAhjsBcANOtC3Q7JxoV1m49URbjWt0eWkyWJUbkh2GogJ6smxGJM7jbwdMONW8ktW0guNKWmYpiNG5vl3LVYIj8dLnnEjXl6yGFKU=
-  file: build/test-travis-0.1.1-Linux.zip
+  file: test-travis-0.1.1-Linux.zip
   skip_cleanup: true
   on:
     repo: BeneSim/test-travis
