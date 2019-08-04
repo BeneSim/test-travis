@@ -10,5 +10,6 @@ install(TARGETS test-travis
     ARCHIVE DESTINATION lib
     )
 
+set(CPACK_GENERATOR "ZIP")
 
 include(CPack)
