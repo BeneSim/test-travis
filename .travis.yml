@@ -6,17 +6,11 @@ matrix:
         - os: osx
         - os: windows
 
-addons:
-    apt:
-        packages: libboost-dev
-    homebrew:
-        packages: boost
-
 install:
     - wget https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.zip 
     - unzip -q boost_1_70_0.zip
     - cd boost_1_70_0
-    - ./bootstrap.sh --with-libraries system
+    - ./bootstrap.sh --with-libraries=system
     - ./b2 install
 
 script:
