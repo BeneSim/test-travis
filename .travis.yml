@@ -12,11 +12,15 @@ addons:
     homebrew:
         packages: boost
 
+install:
+    - wget https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.zip 
+    - unzip boost_1_70_0.zip
+
 script:
-- mkdir build
-- cd build
-- cmake -DCMAKE_BUILD_TYPE=Release ..
-- cmake --build . --target package --config Release
+    - mkdir build
+    - cd build
+    - cmake -DCMAKE_BUILD_TYPE=Release ..
+    - cmake --build . --target package --config Release
 
 deploy:
   provider: releases
