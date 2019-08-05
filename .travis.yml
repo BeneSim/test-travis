@@ -7,7 +7,7 @@ matrix:
         - os: linux
         - os: osx
         - os: windows
-          env: BOOTSTRAP_BINARY=bootstrap.bat SUDO='' CMAKE_ARGUMENTS='-DBOOST_ROOT=C:\Boost -DBoost_DETAILED_FAILURE_MSG=ON'
+          env: BOOTSTRAP_BINARY=bootstrap.bat SUDO='' CMAKE_ARGUMENTS='-DBOOST_ROOT=C:\Boost -DBOOST_INCLUDEDIR=C:\Boost\include\boost-1_70'
 
 install:
     - git clone -b boost-1.70.0 --depth 1 https://github.com/boostorg/boost.git
