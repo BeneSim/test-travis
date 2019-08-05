@@ -2,9 +2,12 @@ cmake_minimum_required(VERSION 3.1)
 
 project(test-travis)
 
-find_package(Boost REQUIRED)
+find_package(Boost REQUIRED COMPONENTS system)
+find_package(Threads REQUIRED)
 
 add_executable(test-travis src/main.cpp)
+
+target_link_libraries(test-travis Boost::headers Boost::system Threads::Threads)
 
 install(TARGETS test-travis
     RUNTIME DESTINATION bin
