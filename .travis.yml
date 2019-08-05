@@ -1,17 +1,13 @@
 language: cpp
 
-env:
-    - BOOTSTRAP_BINARY=bootstrap.sh
-    - SUDO=sudo
+env: BOOTSTRAP_BINARY=bootstrap.sh SUDO=sudo
 
 matrix:
     include:
         - os: linux
         - os: osx
         - os: windows
-          env:
-              - BOOTSTRAP_BINARY=bootstrap.bat
-              - SUDO=
+          env: BOOTSTRAP_BINARY=bootstrap.bat SUDO=''
 
 install:
     - git clone -b boost-1.70.0 --depth 1 https://github.com/boostorg/boost.git
