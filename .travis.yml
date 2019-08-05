@@ -7,7 +7,7 @@ matrix:
         - os: linux
         - os: osx
         - os: windows
-          env: BOOTSTRAP_BINARY=bootstrap.bat SUDO=''
+          env: BOOTSTRAP_BINARY=bootstrap.bat SUDO='' CMAKE_ARGUMENTS='-DBOOST_ROOT=C:\Boost'
 
 install:
     - git clone -b boost-1.70.0 --depth 1 https://github.com/boostorg/boost.git
@@ -21,7 +21,7 @@ install:
 script:
     - mkdir build
     - cd build
-    - cmake -DCMAKE_BUILD_TYPE=Release ..
+    - cmake ${CMAKE_ARGUMENTS} -DCMAKE_BUILD_TYPE=Release ..
     - cmake --build . --target package --config Release
 
 deploy:
