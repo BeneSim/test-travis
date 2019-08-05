@@ -12,7 +12,7 @@ matrix:
 install:
     - git clone -b boost-1.70.0 --depth 1 https://github.com/boostorg/boost.git
     - cd boost
-    - git submodule update --init --recursive --depth 1 libs/headers libs/asio libs/type_traits libs/static_assert libs/core libs/utility libs/system libs/config tools/build tools/boost_install
+    - git submodule update --init --recursive --depth 1 libs/headers libs/asio libs/type_traits libs/static_assert libs/core libs/utility libs/preprocessor libs/system libs/config tools/build tools/boost_install
     - ./${BOOTSTRAP_BINARY} --with-libraries=system
     - ./b2
     - ${SUDO} ./b2 install
