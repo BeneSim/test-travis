@@ -1,21 +1,29 @@
 language: cpp
 
-env: BOOTSTRAP_BINARY=bootstrap.sh
-
-matrix:
-    include:
-        - os: linux
-        - os: osx
-        - os: windows
-          env: BOOTSTRAP_BINARY=bootstrap.bat
-
 install:
     - git clone -b boost-1.70.0 --depth 1 https://github.com/boostorg/boost.git
     - cd boost
     - git submodule update --init --recursive --depth 1 libs/headers libs/system libs/config tools/build tools/boost_install
-    - ./${BOOTSTRAP_BINARY} --with-libraries=system
-    - ./b2
-    - sudo ./b2 -d0 install
+
+matrix:
+    include:
+        - os: linux
+          install:
+              - ./bootstrap.sh --with-libraries=system
+              - ./b2
+              - sudo ./b2 -d0 install
+        - os: osx
+          install:
+              - ./bootstrap.sh --with-libraries=system
+              - ./b2
+              - sudo ./b2 -d0 install
+        - os: windows
+          install:
+              - bootstrap.bat --with-libraries=system
+              - b2
+              - b2 -d0 install
+
+install:
     - cd ..
 
 script:
