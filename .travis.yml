@@ -16,7 +16,7 @@ install:
     - wget https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.zip 
     - unzip -q boost_1_70_0.zip
     - cd boost_1_70_0
-    - ./bootstrap.sh --with-libraries install
+    - ./bootstrap.sh --with-libraries system
     - ./b2 install
 
 script:
