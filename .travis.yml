@@ -6,6 +6,12 @@ matrix:
         - os: osx
         - os: windows
 
+addons:
+    apt:
+        packages: libboost-dev
+    homebrew:
+        packages: boost
+
 script:
 - mkdir build
 - cd build
