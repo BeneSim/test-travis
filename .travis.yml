@@ -10,9 +10,9 @@ matrix:
           env: BOOTSTRAP_BINARY=bootstrap.bat
 
 install:
-    - wget https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.zip 
-    - unzip -q boost_1_70_0.zip
-    - cd boost_1_70_0
+    - git clone -b boost-1.70.0 --depth 1 https://github.com/boostorg/boost.git
+    - cd boost
+    - git submodule update --init --recursive --depth 1 libs/headers libs/system libs/config tools/build tools/boost_install
     - ./${BOOTSTRAP_BINARY} --with-libraries=system
     - ./b2
     - sudo ./b2 -d0 install
