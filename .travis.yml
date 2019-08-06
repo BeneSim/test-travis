@@ -10,8 +10,8 @@ matrix:
           env: BOOTSTRAP_BINARY=bootstrap.bat SUDO='' CMAKE_ARGUMENTS='-DBOOST_INCLUDEDIR=C:\Boost\include\boost-1_70 -DBOOST_LIBRARYDIR=C:\Boost\lib'
 
 install:
-    - wget -q https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.gz
-    - tar xf boost_1_70_0.tar.gz
+    - curl -s -L https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.gz -o boost.tar.gz
+    - tar xf boost.tar.gz
     - cd boost_1_70_0
     - ./${BOOTSTRAP_BINARY}
     - ${SUDO} ./b2 --with-system --link=static install
