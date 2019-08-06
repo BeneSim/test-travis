@@ -5,7 +5,9 @@ env: BOOTSTRAP_BINARY=bootstrap.sh SUDO=sudo
 matrix:
     include:
         - os: linux
+          dist: bionic
         - os: osx
+          osx_image: xcode11
         - os: windows
           env: BOOTSTRAP_BINARY=bootstrap.bat SUDO='' CMAKE_ARGUMENTS='-DBOOST_INCLUDEDIR=C:\Boost\include\boost-1_70 -DBOOST_LIBRARYDIR=C:\Boost\lib'
 
