@@ -13,15 +13,15 @@ install:
     - git clone -b boost-1.70.0 --depth 1 https://github.com/boostorg/boost.git
     - cd boost
     - git submodule update --init --recursive --depth 1
-    - ./${BOOTSTRAP_BINARY} --with-libraries=system
+    - ./${BOOTSTRAP_BINARY}
     - ./b2
-    - ${SUDO} ./b2 install
+    - ${SUDO} ./b2 --with-system --link=static install
     - cd ..
 
 script:
     - mkdir build
     - cd build
-    - cmake ${CMAKE_ARGUMENTS} -DCMAKE_BUILD_TYPE=Release ..
+    - cmake ${CMAKE_ARGUMENTS} -DBoost_USE_STATIC_LIBS=ON -DCMAKE_BUILD_TYPE=Release ..
     - cmake --build . --target package --config Release
 
 deploy:
