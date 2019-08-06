@@ -16,7 +16,7 @@ install:
     - tar xf boost.tar.gz
     - cd boost_1_68_0
     - ./${BOOTSTRAP_BINARY}
-    - ${SUDO} ./b2 -d0 cxxstd=17 --with-system --link=static install
+    - ${SUDO} ./b2  cxxstd=17 --with-system --link=static install
     - cd ..
 
 script:
