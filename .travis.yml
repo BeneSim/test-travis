@@ -13,10 +13,9 @@ install:
     - wget -q https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.tar.gz
     - tar xf boost_1_70_0.tar.gz
     - cd boost_1_70_0
-    - git submodule update --init --recursive --depth 1
     - ./${BOOTSTRAP_BINARY}
-    - ./b2
-    - ${SUDO} ./b2 --with-system --link=static install
+    - ./b2 --with-system --link=static
+    - ${SUDO} ./b2 install
     - cd ..
 
 script:
