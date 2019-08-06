@@ -8,7 +8,7 @@ find_package(Threads REQUIRED)
 add_executable(test-travis src/main.cpp)
 
 target_compile_features(test-travis PRIVATE cxx_std_17)
-target_link_libraries(test-travis Threads::Threads ${Boost_LIBRARIES})
+target_link_libraries(test-travis Threads::Threads Boost::system Boost::boost)
 
 install(TARGETS test-travis
     RUNTIME DESTINATION bin
