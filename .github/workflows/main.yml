@@ -15,7 +15,8 @@ jobs:
         pip install conan
         mkdir build
         cd build
-        conan install ..
+    - name: print
+      run: echo $(which conan)
     - name: configure
       run: |
         cmake ..
