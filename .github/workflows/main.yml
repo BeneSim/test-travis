@@ -15,11 +15,12 @@ jobs:
         pip install conan
         mkdir build
         cd build
-    - name: print
-      run: ~/.local/bin/conan install ..
+        ~/.local/bin/conan install ..
     - name: configure
       run: |
+        cd build
         cmake ..
     - name: make
       run: |
+        cd build
         make
