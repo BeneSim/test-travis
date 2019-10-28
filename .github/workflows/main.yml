@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: install dependencies
-      run: apt-get install boost
+      run: conan create .
     - name: configure
       run: |
         mkdir build
