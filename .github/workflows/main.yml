@@ -15,10 +15,9 @@ jobs:
         pip install conan
         mkdir build
         cd build
+        conan install ..
     - name: configure
       run: |
-        mkdir build
-        cd build
         cmake ..
     - name: make
       run: |
