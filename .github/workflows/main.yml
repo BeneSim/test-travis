@@ -16,7 +16,7 @@ jobs:
         mkdir build
         cd build
     - name: print
-      run: conan install ..
+      run: echo $PATH
     - name: configure
       run: |
         cmake ..
