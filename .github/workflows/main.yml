@@ -24,3 +24,9 @@ jobs:
       run: |
         cd build
         make
+    - name: deploy
+      uses: actions/upload-artifact@v1
+      with:
+        name: bin
+        path: build/bin
+        
