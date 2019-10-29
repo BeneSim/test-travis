@@ -15,7 +15,7 @@ jobs:
         pip install conan
         mkdir build
         cd build
-        ~/.local/bin/conan install ..
+        conan install ..
     - name: configure
       run: |
         cd build
