@@ -24,7 +24,7 @@ jobs:
         sudo pip install conan
         mkdir build
         cd build
-        ${{ conan_path }} install ..
+        ${conan_path} install ..
     - name: configure
       run: |
         cd build
