@@ -15,6 +15,7 @@ jobs:
         pip install conan
         mkdir build
         cd build
+        conan remote list
         conan install ..
     - name: configure
       run: |
