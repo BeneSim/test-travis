@@ -3,13 +3,13 @@ name: CI
 on: [push]
 
 jobs:
-  build:
-
-    runs-on: ${{ matrix.ox }}
+  build:    
     
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest, windows-latest]
+        os: [ubuntu-latest, windows-latest]
+        
+    runs-on: ${{ matrix.ox }}
 
     steps:
     - uses: actions/checkout@v1
