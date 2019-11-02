@@ -3,6 +3,8 @@ name: CI
 on: [push]
 
 jobs:
+
+        
   build:    
     
     runs-on: ${{ matrix.os }}
@@ -36,4 +38,13 @@ jobs:
       with:
         name: bin
         path: build/bin
-        
+
+          
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: redploy
+        uses: actions/download-artifact@v1
+        with:
+          name: bin
