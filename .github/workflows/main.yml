@@ -22,7 +22,7 @@ jobs:
     - name: make
       run: |
         cd build
-        make
+        cmake --build .
     - name: deploy
       uses: actions/upload-artifact@v1
       with:
