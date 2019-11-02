@@ -36,7 +36,7 @@ jobs:
     - name: deploy
       uses: actions/upload-artifact@v1
       with:
-        name: bin
+        name: bin-${{ matrix.os }}
         path: build/bin
 
           
@@ -47,4 +47,4 @@ jobs:
       - name: redploy
         uses: actions/download-artifact@v1
         with:
-          name: bin
+          name: bin-ubuntu-latest
