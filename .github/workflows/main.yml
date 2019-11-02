@@ -15,9 +15,11 @@ jobs:
         pip install conan
         mkdir build
         cd build
-        conan remote list || echo "skip"
         conan remote list
-        conan install ..
+    - name: after
+      if: failure()
+      run: |
+        conan remote list
     - name: configure
       run: |
         cd build
