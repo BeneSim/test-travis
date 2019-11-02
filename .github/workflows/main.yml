@@ -10,11 +10,12 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest, windows-latest]
-        conan_path: [conan]
         include:
           - os: ubuntu-latest
-            conan_path: ~/.local/bin/conan
-        
+            extra_path: ~/.local/bin/conan
+            
+    env:
+      PATH: ${{ matrix.extra_path }}        
     
 
     steps:
@@ -24,7 +25,7 @@ jobs:
         sudo pip install conan
         mkdir build
         cd build
-        ${conan_path} install ..
+        conan install ..
     - name: configure
       run: |
         cd build
