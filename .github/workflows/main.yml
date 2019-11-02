@@ -19,7 +19,7 @@ jobs:
         echo "::add-path::~/.local/bin/"
     - name: install dependencies
       run: |
-        sudo pip install conan
+        pip install conan
         mkdir build
         cd build
         conan install ..
