@@ -14,11 +14,7 @@ jobs:
         pip install conan
         mkdir build
         cd build
-        conan remote list
-    - name: after
-      if: failure()
-      run: |
-        conan remote list
+        conan install ..
     - name: configure
       run: |
         cd build
