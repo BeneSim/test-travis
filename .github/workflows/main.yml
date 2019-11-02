@@ -12,16 +12,13 @@ jobs:
         os: [ubuntu-latest, macOS-latest, windows-latest]
         include:
           - os: ubuntu-latest
-            extra_path: ~/.local/bin/conan
-            
-    env:
-      PATH: ${{ matrix.extra_path }}        
-    
+            extra_path: ~/.local/bin/
 
     steps:
     - uses: actions/checkout@v1
     - name: install dependencies
       run: |
+        echo "::add-path::${{ matrix.extra_path }}"
         sudo pip install conan
         mkdir build
         cd build
