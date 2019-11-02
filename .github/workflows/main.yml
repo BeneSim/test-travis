@@ -7,9 +7,9 @@ jobs:
     
     strategy:
       matrix:
-        os: [windows-latest]
+        foo: [windows-latest]
         
-    runs-on: ${{ matrix.ox }}
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v1
