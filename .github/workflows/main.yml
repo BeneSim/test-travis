@@ -33,11 +33,15 @@ jobs:
       run: |
         cd build
         cmake --build .
+    - name: pack
+      run: |
+        cd build
+        cpack
     - name: deploy
       uses: actions/upload-artifact@v1
       with:
         name: bin-${{ matrix.os }}
-        path: build/bin
+        path: build/*.zip
 
           
   deploy:
