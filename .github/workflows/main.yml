@@ -41,7 +41,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: bin-${{ matrix.os }}
-        path: build/*.zip
+        path: build/test-travis.zip
 
           
   deploy:
