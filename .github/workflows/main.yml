@@ -28,7 +28,7 @@ jobs:
     - name: configure
       run: |
         cd build
-        cmake -DCMAKE_TOOLCHAIN_FILE=conan_paths.cmake ..
+        cmake ..
     - name: make
       run: |
         cd build
