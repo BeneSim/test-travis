@@ -36,6 +36,7 @@ jobs:
     - name: pack
       run: |
         cd build
+        cpack --version
         cpack
     - name: deploy
       uses: actions/upload-artifact@v1
