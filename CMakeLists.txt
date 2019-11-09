@@ -11,6 +11,7 @@ add_executable(test-travis src/main.cpp)
 
 target_compile_features(test-travis PRIVATE cxx_std_17)
 target_link_libraries(test-travis Threads::Threads Boost::boost)
+target_compile_definitions(test-travis PRIVATE BOOST_ALL_NO_LIB)
 
 install(TARGETS test-travis
     RUNTIME DESTINATION bin
