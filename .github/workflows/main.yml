@@ -28,15 +28,15 @@ jobs:
     - name: configure
       run: |
         cd build
-        cmake ..
+        cmake -DCMAKE_BUILD_TYPE=Release ..
     - name: make
       run: |
         cd build
-        cmake --build .
+        cmake --build . --parallel --config Release
     - name: pack
       run: |
         cd build
-        cpack -G ZIP
+        cpack
     - name: deploy
       uses: actions/upload-artifact@v1
       with:
