@@ -43,9 +43,8 @@ jobs:
       if: matrix.os == 'windows-latest'
       run: |
         cd build
-        & 'C:\Program Files/CMake/bin/cpack.exe' --version
         & 'C:\Program Files/CMake/bin/cpack.exe'
-    - name: deploy
+    - name: save artifact
       uses: actions/upload-artifact@v1
       with:
         name: bin-${{ matrix.os }}
@@ -56,7 +55,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     steps:
-      - name: redploy
+      - name: download ubuntu artifact
         uses: actions/download-artifact@v1
         with:
           name: bin-ubuntu-latest
+      - name: download windows artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: bin-windows-latest
+      - name: repack
+        run: |
+          ls -l
