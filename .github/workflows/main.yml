@@ -43,8 +43,7 @@ jobs:
       if: matrix.os == 'windows-latest'
       run: |
         cd build
-        echo $PATH
-        find C:\ -name "cpack.exe"
+        C:\/Program Files/CMake/bin/cpack.exe --version
     - name: deploy
       uses: actions/upload-artifact@v1
       with:
