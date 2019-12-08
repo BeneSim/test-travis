@@ -11,7 +11,7 @@ jobs:
     
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
     - uses: actions/checkout@v1
@@ -66,4 +66,3 @@ jobs:
       - name: repack
         run: |
           ls -l
-          tree
